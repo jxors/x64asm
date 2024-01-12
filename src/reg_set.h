@@ -105,19 +105,13 @@ public:
     group3_((uint64_t)Mask::EMPTY), group4_((uint64_t)Mask::EMPTY) {
   }
   /** Copy constructor. */
-  RegSet(const RegSet& rhs) {
-    group1_ = rhs.group1_;
-    group2_ = rhs.group2_;
-    group3_ = rhs.group3_;
-    group4_ = rhs.group4_;
-  }
+  constexpr RegSet(const RegSet& rhs) :
+    group1_(rhs.group1_), group2_(rhs.group2_), 
+    group3_(rhs.group3_), group4_(rhs.group4_) {}
   /** Move constructor. */
-  RegSet(RegSet&& rhs) {
-    group1_ = rhs.group1_;
-    group2_ = rhs.group2_;
-    group3_ = rhs.group3_;
-    group4_ = rhs.group4_;
-  }
+  constexpr RegSet(RegSet&& rhs) :
+    group1_(rhs.group1_), group2_(rhs.group2_), 
+    group3_(rhs.group3_), group4_(rhs.group4_) {}
   /** Copy assignment operator. */
   RegSet& operator=(const RegSet& rhs) {
     RegSet(rhs).swap(*this);

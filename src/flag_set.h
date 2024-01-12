@@ -38,9 +38,7 @@ public:
   /** Copy constructor. */
   constexpr FlagSet(const FlagSet& rhs) : mask_(rhs.mask_) { }
   /** Move constructor. */
-  FlagSet(FlagSet&& rhs) {
-    mask_ = rhs.mask_;
-  }
+  constexpr FlagSet(FlagSet&& rhs) : mask_(rhs.mask_) {}
   /** Copy assignment operator. */
   FlagSet& operator=(const FlagSet& rhs) {
     FlagSet(rhs).swap(*this);
