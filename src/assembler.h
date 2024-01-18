@@ -157,32 +157,32 @@ private:
   Function* fxn_;
 
   /** REX prefix constant */
-  constexpr uint8_t rex() {
+  constexpr uint8_t rex() const {
     return 0x40;
   }
   /** REX.W prefix constant */
-  constexpr uint8_t rex_w() {
+  constexpr uint8_t rex_w() const {
     return 0x48;
   }
   /** REX.R prefix constant */
-  constexpr uint8_t rex_r() {
+  constexpr uint8_t rex_r() const {
     return 0x44;
   }
   /** REX.X prefix constant */
-  constexpr uint8_t rex_x() {
+  constexpr uint8_t rex_x() const {
     return 0x42;
   }
   /** REX.B prefix constant */
-  constexpr uint8_t rex_b() {
+  constexpr uint8_t rex_b() const {
     return 0x41;
   }
 
   /** Does this operand require a REX prefix? */
-  constexpr bool requires_rex_byte(const Operand& o) {
+  constexpr bool requires_rex_byte(const Operand& o) const {
     return o.type() == Type::R_8 && o.val_ > 3;
   }
   /** Does this operand require a REX.[R,X,B] prefix? */
-  constexpr bool requires_rex_bit(const Operand& o) {
+  constexpr bool requires_rex_bit(const Operand& o) const {
     return o.val_ > 7;
   }
 

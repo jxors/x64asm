@@ -30,25 +30,25 @@ namespace x64asm {
 class Modifier : public Operand {
 public:
   /** Returns true if this modifier is well-formed. */
-  constexpr bool check() {
+  constexpr bool check() const {
     return val_ == 0;
   }
 
   /** Comparison based on on val_. */
-  constexpr bool operator<(const Modifier& rhs) {
+  constexpr bool operator<(const Modifier& rhs) const {
     return val_ < rhs.val_;
   }
   /** Comparison based on on val_. */
-  constexpr bool operator==(const Modifier& rhs) {
+  constexpr bool operator==(const Modifier& rhs) const {
     return val_ == rhs.val_;
   }
   /** Comparison based on on val_. */
-  constexpr bool operator!=(const Modifier& rhs) {
+  constexpr bool operator!=(const Modifier& rhs) const {
     return !(*this == rhs);
   }
 
   /** Conversion based on val_. */
-  constexpr operator uint64_t() {
+  constexpr operator uint64_t() const {
     return val_;
   }
 

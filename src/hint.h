@@ -32,7 +32,7 @@ class Hint : public Operand {
 
 public:
   /** Checks that this hint is well-formed. */
-  constexpr bool check() {
+  constexpr bool check() const {
     return val_ < 2;
   }
 

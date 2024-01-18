@@ -33,11 +33,7 @@ public:
 
 protected:
   /** Direct access to this constructor is disallowed. */
-  constexpr EnvReg(size_t val) : val_(val) {}
-
-private:
-  /** Globally unique id. */
-  size_t val_;
+  constexpr EnvReg(size_t val) {}
 };
 
 /** The FPU Data register. */
